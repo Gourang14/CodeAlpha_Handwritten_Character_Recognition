@@ -26,20 +26,24 @@ Label Encoding: The labels from the CSV file are transformed into numerical form
 The model is a convolutional neural network (CNN) structured as follows:
 
 Input Layer: Accepts images of shape (64, 64, 3).
+
 Convolutional Layers:
-First layer: 512 filters with a kernel size of (5, 5), ReLU activation.
-Second layer: 256 filters with a kernel size of (3, 3), ReLU activation.
-Third layer: 256 filters with a kernel size of (3, 3), ReLU activation.
+1. First layer: 512 filters with a kernel size of (5, 5), ReLU activation.
+2. Second layer: 256 filters with a kernel size of (3, 3), ReLU activation.
+3. Third layer: 256 filters with a kernel size of (3, 3), ReLU activation.
+   
 Max Pooling Layers: After each convolutional layer to reduce the spatial dimensions.
+
 Flattening Layer: Converts the 3D output to 1D.
+
 Dense Layers:
 Fully connected layers with 512, 1024, 512, and 256 neurons, using ReLU and sigmoid activations.
 Output layer: 62 neurons with softmax activation, corresponding to the number of character classes.
-The model is compiled using the following parameters:
 
-Loss Function: Sparse categorical cross-entropy
-Optimizer: Adam
-Metrics: Accuracy
+The model is compiled using the following parameters:
+1.Loss Function: Sparse categorical cross-entropy
+2. Optimizer: Adam
+3. Metrics: Accuracy
 # Training
 The model is trained for 20 epochs, with a validation split of 20%. During training, the loss and accuracy are monitored.
 
